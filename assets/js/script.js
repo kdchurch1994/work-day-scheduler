@@ -1,4 +1,7 @@
-
+// Function that loads all other functions when the web page is first loaded. 
+window.onload = function(){
+    timeColorCoding(); //run the timeColorCoding function
+}
 
 // Using Moment JS to Display the current date and update the current date
 var todaysDate = null; //sets the variable todaysDate to null. Will be called in a function. 
@@ -27,26 +30,29 @@ function timeColorCoding (){
         var timeBlocks = parseInt($(this).attr("id").split("hour")[1]);
     
 
-    // If conditional statement that checks the time and provies the correct color coding depending on the time
+    // If conditional statements that checks the time and provies the correct color coding depending on the time
 
         if (timeBlocks < realTime) {
-            $(this).removeClass("present");
-            $(this).removeClass("future");
-            $(this).addClass("past");
+            $(this).removeClass("present"); // removes the class present as it does not apply to this conditional statement
+            $(this).removeClass("future"); // removes the class future as it does not apply to this conditional statement
+            $(this).addClass("past"); // adds the class to the timeblocks as this conditional statement is supposed to display a gray background for timeblocks that are in the past.
         }
 
         else if (timeBlocks === realTime) {
-            $(this).removeClass("past");
-            $(this).removeClass("future");
-            $(this).addClass("present");        
+            $(this).removeClass("past"); // removes the class past as it does not apply to this conditional statement
+            $(this).removeClass("future"); // removes the class future as it does not apply to this conditional statement
+            $(this).addClass("present"); // adds the present class to the timeblocks that match the conditional statement, which is anything in the present       
         }
        
         else {
-            $(this).removeClass("past");
-            $(this).removeClass("present");
-            $(this).addClass("future");
+            $(this).removeClass("past"); // removes the class past as it does not apply to this conditional statement
+            $(this).removeClass("present"); // removes the class present as it does not apply to this conditional statement
+            $(this).addClass("future"); // adds the present class to the timeblocks that match the conditional statement, which is anything in the future
         }
 
     })    
 }
-timeColorCoding();
+
+
+
+

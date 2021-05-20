@@ -1,6 +1,7 @@
 // Function that loads all other functions when the web page is first loaded. 
 window.onload = function(){
-    timeColorCoding(); //run the timeColorCoding function
+    timeColorCoding(); //runs the timeColorCoding function
+    saveBtn(); //runs the saveBtn function
 }
 
 // Using Moment JS to Display the current date and update the current date
@@ -21,7 +22,7 @@ $(document).ready(function(){
 });
 
 // Function for Color Coding. This functions loops over each time block checking to see if the currentTime is either greater than, less than, or equivalent to the hour of each timeblock.
-// If the time is in the past, the timeblock is grey. If the time is in the present, the timeblock is red. If the time is in the future, the timeblock is green. 
+// If the time is in the past, the timeblock is gray. If the time is in the present, the timeblock is red. If the time is in the future, the timeblock is green. 
 function timeColorCoding (){
     var realTime = moment().hour();
 
@@ -52,7 +53,27 @@ function timeColorCoding (){
 
     })    
 }
+//A function that 
+function saveBtn (){
+    $(".saveBtn").on("click", function () { 
+        var textField = $(this).siblings(".text").val();
+        var timeBlock = $(this).parent().attr("id");
+        localStorage.setItem(timeBlock, textField);
+    })
 
+    //Retreive itemts from local stroage
+    $("#hour8 .text").val(localStorage.getItem("hour8"));
+    $("#hour9 .text").val(localStorage.getItem("hour9"));
+    $("#hour10 .text").val(localStorage.getItem("hour10"));
+    $("#hour11 .text").val(localStorage.getItem("hour11"));
+    $("#hour12 .text").val(localStorage.getItem("hour12"));
+    $("#hour13 .text").val(localStorage.getItem("hour13"));
+    $("#hour14 .text").val(localStorage.getItem("hour14"));
+    $("#hour15 .text").val(localStorage.getItem("hour15"));
+    $("#hour16 .text").val(localStorage.getItem("hour16"));
+    $("#hour17 .text").val(localStorage.getItem("hour17"));
+
+}
 
 
 

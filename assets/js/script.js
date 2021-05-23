@@ -26,7 +26,7 @@ $(document).ready(function(){
 function timeColorCoding (){
     var realTime = moment().hour();
 
-    //part of the function that loops through each time block parsing for the info in the id and hours fields for each timeblock. 
+    // Part of the function that loops through each time block parsing for the info in the id and hours fields for each timeblock. 
     $(".Timeblocks").each(function () {
         var timeBlocks = parseInt($(this).attr("id").split("hour")[1]);
     
@@ -48,12 +48,13 @@ function timeColorCoding (){
         else {
             $(this).removeClass("past"); // removes the class past as it does not apply to this conditional statement
             $(this).removeClass("present"); // removes the class present as it does not apply to this conditional statement
-            $(this).addClass("future"); // adds the present class to the timeblocks that match the conditional statement, which is anything in the future
+            $(this).addClass("future"); // adds the future class to the timeblocks that match the conditional statement, which is anything in the future
         }
 
     })    
 }
-//A function that listens for the button click and sets two variables to be equal to whatever is entered into the .text fields and whatever the id fields are for each hour. These variables are stored in local storage.
+// A function that listens for the button click and sets two variables to be equal to whatever is entered into the .text fields and whatever the id fields are for each hour. 
+// These variables are stored in local storage.
 function saveBtn (){
     $(".saveBtn").on("click", function () { 
         var textField = $(this).siblings(".text").val();
@@ -61,7 +62,7 @@ function saveBtn (){
         localStorage.setItem(timeBlock, textField);
     })
 
-    //Retreive itemts from local stroage
+    // Retreive items from local storage
     $("#hour8 .text").val(localStorage.getItem("hour8")); //Retrieves the info for the hour 8 timeblock from local storage
     $("#hour9 .text").val(localStorage.getItem("hour9")); //Retrieves the info for the hour 9 timeblock from local storage
     $("#hour10 .text").val(localStorage.getItem("hour10")); //Retrieves the info for the hour 10 timeblock from local storage

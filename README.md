@@ -13,6 +13,6 @@ This website provides a work day scheduler that provides a textbox entry for eve
  https://kdchurch1994.github.io/work-day-scheduler/
 
  ## Image
-    ![Alt text](./assets/images/Work-Day-Scheduler-Image.JPG)
+    ![Alt text](./assets/Images/Work-Day-Scheduler-Image.JPG)
  ## Contribution
  Made By Kyle Church
